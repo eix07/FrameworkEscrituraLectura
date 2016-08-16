@@ -27,7 +27,7 @@ public class Space {
         this.fixedSpace = fixedSpace;
     }
     
-    public void addContent(String contn){
+    public void addContent(Object contn){
         this.content=this.content+contn;
         String blank=" ";
         if(this.content.length()<=(Integer.parseInt(this.fixedSpace))){
