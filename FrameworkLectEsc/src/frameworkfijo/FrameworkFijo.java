@@ -19,7 +19,7 @@ public class FrameworkFijo {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         
         
         //EscribirPart(String direccion de archivo)
@@ -27,24 +27,18 @@ public class FrameworkFijo {
         //.addContentSpace(Posicion de la columna, contenido de la columna)
         //.writeSpaces(Escribe las partes fijas en el disco)
         
-        Persona p=new Persona("Miguel","22","23423432");
+        Persona miguel= new Persona();
+        miguel.setNombre("Miguel Rivera");
+        miguel.setID("1");
+        miguel.setEdad(22);
         
-        EscribirPart s=new EscribirPart(Persona.class, "src/frameworkfijo/bla.txt");
+        Persona santiago=new Persona();
+        santiago.setNombre("Santiago Sanchez");
+        santiago.setEdad(21);
+        santiago.setID("10323232");
         
-        try {
-            s.writeSpaces(p);
-        } catch (NoSuchMethodException ex) {
-            Logger.getLogger(FrameworkFijo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(FrameworkFijo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(FrameworkFijo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalArgumentException ex) {
-            Logger.getLogger(FrameworkFijo.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvocationTargetException ex) {
-            Logger.getLogger(FrameworkFijo.class.getName()).log(Level.SEVERE, null, ex);
-        }
- 
+        Escritor.escribir(miguel, "src/frameworkfijo/descriptorPersona.txt");
+      Escritor.escribir(santiago, "src/frameworkfijo/descriptorPersona.txt");
         
     }
     

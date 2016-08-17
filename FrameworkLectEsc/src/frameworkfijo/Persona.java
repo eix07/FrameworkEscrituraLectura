@@ -12,13 +12,11 @@ package frameworkfijo;
 public class Persona {
     
     String nombre;
-    String edad;
+    int edad;
     String ID;
 
-    public Persona(String nombre, String edad, String ID) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.ID = ID;
+    public Persona() {
+
     }
 
     public String getNombre() {
@@ -29,11 +27,11 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
