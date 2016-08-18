@@ -31,7 +31,7 @@ public class Persona {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 

@@ -5,8 +5,10 @@
  */
 package frameworkfijo;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +21,7 @@ public class FrameworkFijo {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, FileNotFoundException, InstantiationException {
         
         
         //EscribirPart(String direccion de archivo)
@@ -27,7 +29,7 @@ public class FrameworkFijo {
         //.addContentSpace(Posicion de la columna, contenido de la columna)
         //.writeSpaces(Escribe las partes fijas en el disco)
         
-        Persona miguel= new Persona();
+       /* Persona miguel= new Persona();
         miguel.setNombre("Miguel Rivera");
         miguel.setID("1");
         miguel.setEdad(22);
@@ -38,7 +40,18 @@ public class FrameworkFijo {
         santiago.setID("10323232");
         
         Escritor.escribir(miguel, "src/frameworkfijo/descriptorPersona.txt");
-      Escritor.escribir(santiago, "src/frameworkfijo/descriptorPersona.txt");
+      Escritor.escribir(santiago, "src/frameworkfijo/descriptorPersona.txt");*/
+      
+        
+       
+        ArrayList<Object> lisOb= Lector.lector("src/frameworkfijo/descriptorPersona.txt", "src/frameworkfijo/bestia.txt");
+        ArrayList<Persona> lisPe= new ArrayList<>();
+        for (Object ob : lisOb) {
+            lisPe.add((Persona)ob);
+        }
+        for (Persona persona : lisPe) {
+            System.out.println("Nombre "+persona.getNombre()+"\n"+"ID "+persona.getID()+"\n"+"Edad "+persona.getEdad());
+        }
         
     }
     
