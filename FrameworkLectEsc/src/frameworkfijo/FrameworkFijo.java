@@ -29,19 +29,19 @@ public class FrameworkFijo {
         //.addContentSpace(Posicion de la columna, contenido de la columna)
         //.writeSpaces(Escribe las partes fijas en el disco)
         
-       /* Persona miguel= new Persona();
-        miguel.setNombre("Miguel Rivera");
-        miguel.setID("1");
-        miguel.setEdad(22);
+       Persona profe= new Persona();
+        profe.setNombre("Danilo");
+        profe.setID("3");
+        profe.setEdad(22);
         
-        Persona santiago=new Persona();
+       /*  Persona santiago=new Persona();
         santiago.setNombre("Santiago Sanchez");
         santiago.setEdad(21);
         santiago.setID("10323232");
         
         Escritor.escribir(miguel, "src/frameworkfijo/descriptorPersona.txt");
       Escritor.escribir(santiago, "src/frameworkfijo/descriptorPersona.txt");*/
-      
+      Escritor.escribir(profe, "src/frameworkfijo/descriptorPersona.txt");
         
        
         ArrayList<Object> lisOb= Lector.lector("src/frameworkfijo/descriptorPersona.txt", "src/frameworkfijo/bestia.txt");

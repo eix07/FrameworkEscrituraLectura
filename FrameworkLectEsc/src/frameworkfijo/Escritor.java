@@ -33,10 +33,10 @@ public class Escritor {
         String fin="";
         while ((linea=lector.readLine())!=null) {
             String con="";
-            String[] arr= linea.split(" ");
-            Method get= cls.getMethod("get"+capitalize(arr[1])); 
+            String[] parametrosParaLaClase= linea.split(" ");
+            Method get= cls.getMethod("get"+capitalize(parametrosParaLaClase[1])); 
             con=  get.invoke(a).toString();
-            int resta=(Integer.parseInt(arr[2]))-con.length();
+            int resta=(Integer.parseInt(parametrosParaLaClase[2]))-con.length();
             for (int i = 0; i < resta; i++) {
                 con=con+" ";
             }
