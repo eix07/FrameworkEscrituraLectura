@@ -4,7 +4,7 @@ package FrameworkAnotaciones;
  *
  * @author Nosotros
  */
-
+@FixedName(className="Tomate")
 public class Tomate {
     
     @FixedWidthField(position=2,width=20) String color;
