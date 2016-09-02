@@ -7,12 +7,11 @@ package FrameworkAnotaciones;
 @FixedName(className="FrameworkAnotaciones.Tomate")
 public class Tomate {
     
-    @FixedWidthField(position=2,width=20) String color;
-    @FixedWidthField(position=1,width=3) int  peso;
+    @FixedWidthField(position=1,width=20) String color;
+    @FixedWidthField(position=2,width=3) int  peso;
     
-    public Tomate(String c,int p){
-        this.color=c;
-        this.peso=p;
+    public Tomate(){
+        
     }
 
     public String getColor() {
