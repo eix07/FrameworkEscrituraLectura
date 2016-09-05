@@ -15,6 +15,7 @@ import java.lang.reflect.Field;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,8 +45,8 @@ public class AnotationReader {
     }
 
     public void EscribirConAnotaciones(Object obj) throws IOException, ClassNotFoundException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
-        String rutaFinal = "src/frameworkAnotaciones/FrameworkAnotaciones.Tomate";
-        System.out.println(anotaciones.length);
+        String rutaFinal = "src/FrameworkAnotaciones/FrameworkAnotaciones"+this.cls.getSimpleName()+".txt";
+        //System.out.println(anotaciones.length);
         FixedName name = (FixedName) anotaciones[0];
         Class cls = Class.forName(name.className());
 
@@ -55,11 +56,11 @@ public class AnotationReader {
         String valorEscribir = "";
         for (Field campo : campos) {
 
-            System.out.println("campo " + campo.getName());
+            //System.out.println("campo " + campo.getName());
             anotaciones = campo.getAnnotations();
 
             for (Annotation anotacion : anotaciones) {
-                System.out.println(anotacion);
+               // System.out.println(anotacion);
                 if (anotacion instanceof FixedWidthField) {
                     int pos = (((FixedWidthField) anotacion).position());
                     int width = (((FixedWidthField) anotacion).width());
@@ -82,7 +83,7 @@ public class AnotationReader {
         return Character.toUpperCase(line.charAt(0)) + line.substring(1);
     }
 
-    public LinkedList<Object> leerConAnotaciones(String ruta) throws FileNotFoundException, ClassNotFoundException, IOException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException {
+    public LinkedList<Object> leerConAnotaciones(String ruta) throws FileNotFoundException, ClassNotFoundException, IOException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException, ParseException {
         List<String> datos = leerArchivo(ruta);
         LinkedList<Object> retorna = new LinkedList<>();
         
@@ -94,7 +95,9 @@ public class AnotationReader {
                 if (anotaciones[0] instanceof FixedWidthField) {
                     int width = (((FixedWidthField) anotaciones[0]).width()) - 1;
                     String data = dato.substring(posicion, posicion + width);
-                    posicion = width + 1;
+                    System.out.println(posicion+" "+(posicion+width));
+                    posicion = posicion+width + 1;
+                    System.out.println("campo "+data);
                     Method get = cls.getMethod("set" + capitalize(campo.getName()), campo.getType());
                     get.invoke(obj, casteoObjeto(campo.getType(), data));
                 }
@@ -118,7 +121,7 @@ public class AnotationReader {
         return ls;
     }
 
-    private Object casteoObjeto(Class<?> type, String data) {
+    private Object casteoObjeto(Class<?> type, String data) throws ParseException {
         Object temporal = null;
         ///System.out.println("data " + data);
         if (type.getCanonicalName().equalsIgnoreCase("int")) {
@@ -130,8 +133,9 @@ public class AnotationReader {
         } else if (type.getCanonicalName().equalsIgnoreCase("java.lang.String")) {
             temporal = data;
         } else if (type.getCanonicalName().equalsIgnoreCase("java.util.Date")) {
-            SimpleDateFormat fechaFormato = new SimpleDateFormat("yyyy/MM/dd");
-            temporal = fechaFormato.format(data.trim());
+            SimpleDateFormat dt1 = new SimpleDateFormat("yyyy/MM/dd");
+            temporal=dt1.parse(data);
+            System.out.println(dt1.format(temporal));
         }
         return temporal;
 

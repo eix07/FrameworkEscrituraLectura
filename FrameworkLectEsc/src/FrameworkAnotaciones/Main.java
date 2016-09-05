@@ -7,6 +7,8 @@ package FrameworkAnotaciones;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,16 +20,23 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Tomate tomaco = new Tomate();
+            /*Tomate tomaco = new Tomate();
             tomaco.setColor("Verde");
-            tomaco.setPeso(22);
+            tomaco.setPeso(22);*/
+            
+            Persona persona= new Persona();
+            persona.setAltura(1.78);
+            persona.setApellido("Sanchez");
+            persona.setNombre("Santiago");
+            persona.setFechaNacimiento(new Date());
+            
 
-            AnotationReader r = new AnotationReader(tomaco.getClass());
-            //r.EscribirConAnotaciones(tomaco);
-            LinkedList<Object> lista=  r.leerConAnotaciones("src/FrameworkAnotaciones/FrameworkAnotaciones.Tomate");
+            AnotationReader r = new AnotationReader(persona.getClass());
+            r.EscribirConAnotaciones(persona);
+            LinkedList<Object> lista=  r.leerConAnotaciones("src/FrameworkAnotaciones/FrameworkAnotacionesPersona.txt");
             for (Object lista1 : lista) {
-                Tomate a= (Tomate) lista1;
-                System.out.println(a.getColor()+" "+a.getPeso());
+                Persona a= (Persona) lista1;
+                System.out.println(a.toString());
             }
             
         } catch (Exception e) {
