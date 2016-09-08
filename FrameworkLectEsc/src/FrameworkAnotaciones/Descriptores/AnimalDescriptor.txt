@@ -1,0 +1,2 @@
+FrameworkAnotaciones.Objetos.Animal
+src/FrameworkAnotaciones/Archivos/Animales.txt

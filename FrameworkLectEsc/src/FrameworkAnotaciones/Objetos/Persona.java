@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FrameworkAnotaciones;
+package FrameworkAnotaciones.Objetos;
 
+import FrameworkAnotaciones.FixedWidthField;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.Date;
  *
  * @author Santiago
  */
-@FixedName(className="FrameworkAnotaciones.Persona")
+
 public class Persona {
     
     @FixedWidthField(position=1,width=20) String nombre;

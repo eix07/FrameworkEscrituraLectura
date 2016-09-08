@@ -1,0 +1,2 @@
+FrameworkAnotaciones.Objetos.Persona
+src/FrameworkAnotaciones/Archivos/Personas.txt
