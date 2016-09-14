@@ -21,11 +21,14 @@ import java.util.StringTokenizer;
  */
 public class Escritor {
     
+    
+    
     public static void escribir(Object a, String rutaDescriptor) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
         BufferedReader lector= new BufferedReader(new FileReader(rutaDescriptor));
         String linea;
         Class<?> cls= Class.forName(lector.readLine());
-        String rutaFinal="src/frameworkfijo/bestia.txt";
+        
+        String rutaFinal=lector.readLine();
         FileWriter fw=new FileWriter(rutaFinal,true);
         BufferedWriter bw=new BufferedWriter(fw);
         

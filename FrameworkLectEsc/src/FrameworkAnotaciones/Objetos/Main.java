@@ -232,6 +232,8 @@ public class Main {
             l.setPaisDondeHablan(entrada.readLine());
             System.out.println("Ingrese cantidad de personas que hablan este lenguaje");
             l.setPersonasQueLoHablan(Integer.parseInt(entrada.readLine()));
+            System.out.println("Ingrese si es esto");
+            l.setEsto(Boolean.parseBoolean(entrada.readLine()));
             lenguajeReader.EscribirConAnotaciones(l);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

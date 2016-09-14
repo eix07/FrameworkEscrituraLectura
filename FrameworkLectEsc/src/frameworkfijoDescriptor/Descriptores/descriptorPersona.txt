@@ -1,0 +1,6 @@
+frameworkfijoDescriptor.Objetos.Persona
+src/frameworkfijoDescriptor/Archivos/Personas.txt
+String nombre 30
+int edad 10
+Date fechaNacimiento 11
+boolean estudia 5

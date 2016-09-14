@@ -1,1 +1,1 @@
-Espa�ol        Colombia  50000          
+Ingles         Canada    24444          false

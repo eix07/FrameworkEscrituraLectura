@@ -1,4 +1,0 @@
-frameworkfijo.Persona
-String nombre 30
-int edad 10
-String ID 10

@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package frameworkfijoDescriptor;
+package frameworkfijoDescriptor.Objetos;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -11,9 +14,11 @@ package frameworkfijoDescriptor;
  */
 public class Persona {
     
-    String nombre;
-    int edad;
-    String ID;
+    public String nombre;
+    public int edad;
+   
+    public Date fechaNacimiento;
+    public boolean estudia;
 
     public Persona() {
 
@@ -35,14 +40,28 @@ public class Persona {
         this.edad = edad;
     }
 
-    public String getID() {
-        return ID;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    
+
+   
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public boolean isEstudia() {
+        return estudia;
+    }
+
+    public void setEstudia(boolean estudia) {
+        this.estudia = estudia;
     }
     
+    
+
     
     
 }
