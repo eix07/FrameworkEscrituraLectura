@@ -1,2 +1,8 @@
 Santiago Sanchez              21        1995/6/8   true 
 Rocio COrtes                  22        1996/7/3   false
+Miguel Rivera                 23        1994/5/6   true 
+Juan Felipe Torres            21        1995/4/5   true 
+Nathalia Narvaez              20        1996/4/6   true 
+Mario Ortega                  21        1995/6/3   true 
+Zulma Paola Sachez            38        1978/5/11  false 
+Carlos Arturo Sanchez         39        1977/6/6   false   

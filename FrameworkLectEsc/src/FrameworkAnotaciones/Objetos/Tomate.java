@@ -1,6 +1,7 @@
 package FrameworkAnotaciones.Objetos;
 
 import FrameworkAnotaciones.FixedWidthField;
+import java.util.Date;
 
 /**
  *
@@ -11,6 +12,8 @@ public class Tomate {
     
     @FixedWidthField(position=1,width=20) String color;
     @FixedWidthField(position=2,width=3) double  peso;
+    @FixedWidthField(position=3,width=7)boolean estaPicho;
+    @FixedWidthField(position=4,width=11)Date fechaVencimiento;
     
     public Tomate(){
         
@@ -32,9 +35,25 @@ public class Tomate {
         this.peso = peso;
     }
 
+    public boolean isEstaPicho() {
+        return estaPicho;
+    }
+
+    public void setEstaPicho(boolean estaPicho) {
+        this.estaPicho = estaPicho;
+    }
+
+    public Date getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(Date fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+
     @Override
     public String toString() {
-        return "Tomate{" + "color=" + color + ", peso=" + peso + '}';
+        return "Tomate{" + "color=" + color + ", peso=" + peso + ", estaPicho=" + estaPicho + ", fechaVencimiento=" + fechaVencimiento + '}';
     }
     
     

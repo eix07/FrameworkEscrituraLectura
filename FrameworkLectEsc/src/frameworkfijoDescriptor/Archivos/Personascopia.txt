@@ -1,0 +1,8 @@
+Mario Ortega                  21        1995/06/03 true 
+Juan Felipe Torres            21        1995/04/05 true 
+Nathalia Narvaez              20        1996/04/06 true 
+Miguel Rivera                 23        1994/05/06 true 
+Zulma Paola Sachez            38        1978/05/11 false
+Santiago Sanchez              21        1995/06/08 true 
+Carlos Arturo Sanchez         39        1977/06/06 false
+Rocio COrtes                  22        1996/07/03 false
