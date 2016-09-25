@@ -13,10 +13,10 @@ import FrameworkAnotaciones.FixedWidthField;
  */
 public class Lenguaje {
     
-    @FixedWidthField(position=1,width=15) String nombre;
-    @FixedWidthField(position=2,width=10) String paisDondeHablan;
-    @FixedWidthField(position=3,width=15) int personasQueLoHablan;
-    @FixedWidthField(position=4,width=5) boolean esto;
+    @FixedWidthField(width=15) String nombre;
+    @FixedWidthField(width=10) String paisDondeHablan;
+    @FixedWidthField(width=15) int personasQueLoHablan;
+    @FixedWidthField(width=5) boolean esto;
 
     public boolean getEsto() {
         return esto;

@@ -1,0 +1,9 @@
+co.edu.usa.adf.vaadin.model.ToDo
+src/frameworkfijoDescriptor/Archivos/tomates.txt
+int id 3
+String message 49
+Date deadline 10
+int priority 1
+int progress 3
+boolean finished 5
+boolean persisted 5

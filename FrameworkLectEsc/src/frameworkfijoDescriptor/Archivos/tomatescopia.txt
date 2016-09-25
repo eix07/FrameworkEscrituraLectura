@@ -1,0 +1,8 @@
+6  Comprar chaquetas nuevas.                        2016/10/0130  falsetrue 
+2  Calificar las tareas de ingeniería de software.  2016/09/202100true true 
+7  Comprar pantalones nuevos.                       2016/10/0120  falsetrue 
+1  Lavar la loza que quedó sucia desde anoche.      2016/09/14150 falsetrue 
+3  Calificar las tareas de frameworks.              2016/09/21290 falsetrue 
+4  Lavar el carro.                                  2016/10/0140  falsetrue 
+10 Pagar servicios.                                 2016/09/011100true true 
+5  Comprar el regalo de mi amigo secreto.           2016/09/1630  falsetrue 

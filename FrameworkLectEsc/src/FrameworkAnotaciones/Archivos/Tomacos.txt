@@ -1,10 +1,16 @@
-Chonto              2.0true   2016/01/07 
-Azul                2.0false  2016/01/02 
-Rojo                2.0true   2016/01/09 
-Negro               3.0true   2016/01/04 
-Verde               2.0true   2016/01/01 
-Verde               2.0true   2016/01/01 
-Negro               3.0true   2016/01/04 
-Azul                2.0false  2016/01/02 
-Rojo                2.0true   2016/01/09 
-Chonto              2.0true   2016/01/07 
+6  Comprar chaquetas nuevas.                        2016/10/0130  falsetrue 
+3  Calificar las tareas de frameworks.              2016/09/21290 falsetrue 
+5  Comprar el regalo de mi amigo secreto.           2016/09/1630  falsetrue 
+10 Pagar servicios.                                 2016/09/011100true true 
+2  Calificar las tareas de ingeniería de software.  2016/09/202100true true 
+1  Lavar la loza que quedó sucia desde anoche.      2016/09/14150 falsetrue 
+7  Comprar pantalones nuevos.                       2016/10/0120  falsetrue 
+4  Lavar el carro.                                  2016/10/0140  falsetrue 
+2  Calificar las tareas de ingeniería de software.  2016/09/202100true true 
+1  Lavar la loza que quedó sucia desde anoche.      2016/09/14150 falsetrue 
+10 Pagar servicios.                                 2016/09/011100true true 
+5  Comprar el regalo de mi amigo secreto.           2016/09/1630  falsetrue 
+4  Lavar el carro.                                  2016/10/0140  falsetrue 
+6  Comprar chaquetas nuevas.                        2016/10/0130  falsetrue 
+7  Comprar pantalones nuevos.                       2016/10/0120  falsetrue 
+3  Calificar las tareas de frameworks.              2016/09/21290 falsetrue 

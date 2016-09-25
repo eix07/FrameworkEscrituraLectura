@@ -66,20 +66,24 @@ public class FrameworkFijo {
             for (String lineaArchivo : lineasArchivoTomate) {
                 Object objeto = clase.newInstance();
                 for (Integer sizeCampo : tamanos) {
-                    finVentana = (sizeCampo - 1) + inicioVentana;
+                    finVentana = (sizeCampo) + inicioVentana;
+                    
+                    
+                    //System.out.println("ini "+inicioVentana+" fin "+finVentana);
                     String valor = lineaArchivo.substring(inicioVentana, finVentana);
-
-                    Method metodoClase = clase.getDeclaredMethod("set" + capitalize(campos.get(posicionActual)), tipoDato.get(posicionActual));
-                    Object valorCambiado = setValor(valor, posicionActual);
+                    
+                    Method   metodoClase = clase.getDeclaredMethod("set" + capitalize(campos.get(posicionActual)), tipoDato.get(posicionActual));
+                    Object valorCambiado = setValor(valor.trim(), posicionActual);
                     metodoClase.invoke(objeto, valorCambiado);
-
-                    inicioVentana = finVentana + 1;
+                    
+                    inicioVentana = finVentana;
                     posicionActual++;
                 }
                 finVentana = 0;
                 inicioVentana = 0;
                 posicionActual = 0;
                 listaDatosDelArchivo.add(objeto);
+               
             }
             escribirDatosEnArchivo();
             mostrarListaDatos();
@@ -98,9 +102,9 @@ public class FrameworkFijo {
                 if (lineaDelDescriptor[0].equalsIgnoreCase("String")) {
                     tipoDato.add(String.class);
                 } else if (lineaDelDescriptor[0].equalsIgnoreCase("int")) {
-                    tipoDato.add(Integer.class);
+                    tipoDato.add(int.class);
                 } else if (lineaDelDescriptor[0].equalsIgnoreCase("double")) {
-                    tipoDato.add(Double.class);
+                    tipoDato.add(double.class);
                 } else if (lineaDelDescriptor[0].equalsIgnoreCase("Date")) {
                     tipoDato.add(java.util.Date.class);
                 } else if (lineaDelDescriptor[0].equalsIgnoreCase("boolean")) {
@@ -177,12 +181,12 @@ public class FrameworkFijo {
     private Object setValor(String valor, int posicionActual) {
         Object retorno = null;
         try {
-
+            //System.out.println(valor);
             if (tipoDato.get(posicionActual).equals(String.class)) {
                 retorno = valor;
-            } else if (tipoDato.get(posicionActual).equals(Integer.class)) {
+            } else if (tipoDato.get(posicionActual).equals(int.class)) {
                 retorno = Integer.parseInt(valor.trim());
-            } else if (tipoDato.get(posicionActual).equals(Double.class)) {
+            } else if (tipoDato.get(posicionActual).equals(double.class)) {
                 retorno = Double.parseDouble(valor.trim());
             } else if (tipoDato.get(posicionActual).equals(java.util.Date.class)) {
                 SimpleDateFormat dt1 = new SimpleDateFormat("yyyy/MM/dd");

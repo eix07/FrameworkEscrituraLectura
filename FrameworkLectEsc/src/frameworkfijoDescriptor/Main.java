@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         
         try {
-             FrameworkFijo framework= new FrameworkFijo("src/frameworkfijoDescriptor/Descriptores/descriptorPersona.txt");
+             FrameworkFijo framework= new FrameworkFijo("src/frameworkfijoDescriptor/Descriptores/descriptorTomate.txt");
              framework.lectorArchivo();
         } catch (Exception e) {
             e.printStackTrace();

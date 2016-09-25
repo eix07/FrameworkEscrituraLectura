@@ -10,10 +10,10 @@ import java.util.Date;
 
 public class Tomate {
     
-    @FixedWidthField(position=1,width=20) String color;
-    @FixedWidthField(position=2,width=3) double  peso;
-    @FixedWidthField(position=3,width=7)boolean estaPicho;
-    @FixedWidthField(position=4,width=11)Date fechaVencimiento;
+    @FixedWidthField(width=20) String color;
+    @FixedWidthField(width=3) double  peso;
+    @FixedWidthField(width=7)boolean estaPicho;
+    @FixedWidthField(width=11)Date fechaVencimiento;
     
     public Tomate(){
         

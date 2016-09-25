@@ -17,10 +17,10 @@ import java.util.Date;
 
 public class Persona {
     
-    @FixedWidthField(position=1,width=20) String nombre;
-    @FixedWidthField(position=2,width=25) String apellido;
-    @FixedWidthField(position=3,width=10) Date fechaNacimiento;
-    @FixedWidthField(position=4,width=5) double altura;
+    @FixedWidthField(width=20) String nombre;
+    @FixedWidthField(width=25) String apellido;
+    @FixedWidthField(width=10) Date fechaNacimiento;
+    @FixedWidthField(width=5) double altura;
     
     public Persona(){
     

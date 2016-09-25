@@ -6,15 +6,6 @@
 package FrameworkAnotaciones.Objetos;
 
 import FrameworkAnotaciones.AnotationReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.text.ParseException;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -26,9 +17,11 @@ public class Main {
 
     public static void main(String[] args) {
             
-            tomateReader = new AnotationReader("src/FrameworkAnotaciones/Descriptores/TomateDescriptor.txt");
+            tomateReader = new AnotationReader("src/FrameworkAnotaciones/Descriptores/tomaDescriptor.txt");
             tomateReader.leerConAnotaciones();
-            tomateReader.leerTomate();
-            tomateReader.EscribirAleatorio();
+            tomateReader.leerTomate();  //Muestra los datos por consola
+            tomateReader.EscribirAleatorio(); //Escribe en el archivo de salida Aleatoreamente
+            
+                //Vamos a correrlo !!!!!!
     }
 }

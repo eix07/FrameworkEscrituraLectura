@@ -8,6 +8,7 @@ package FrameworkAnotaciones;
 import FrameworkAnotaciones.Objetos.Main;
 
 import FrameworkAnotaciones.Objetos.Tomate;
+import FrameworkAnotaciones.FixedWidthField;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -43,10 +44,11 @@ public class AnotationReader {
         try {
             this.lector = new Lector(new FileReader(rutaDescriptor));
             List<String> lista = this.lector.leerArchivo();
-            this.cls = Class.forName(lista.get(0));
-            this.rutaArchivo = lista.get(1);
-            this.campos = this.cls.getDeclaredFields();
-            this.anotaciones = this.cls.getAnnotations();
+            cls = Class.forName(lista.get(0));
+            rutaArchivo = lista.get(1);
+            campos = cls.getDeclaredFields();
+            
+            
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -54,7 +56,7 @@ public class AnotationReader {
 
     public void EscribirConAnotaciones(Object obj) {
         try {
-            FileWriter fw = new FileWriter("src/FrameworkAnotaciones/Archivos/Tomacos.txt", true);
+            FileWriter fw = new FileWriter("src/FrameworkAnotaciones/Archivos/Tomacos.txt", true); //Archivo de salida
             BufferedWriter bw = new BufferedWriter(fw);
             String valor = "";
             String valorEscribir = "";
@@ -62,11 +64,11 @@ public class AnotationReader {
 
                 //System.out.println("campo " + campo.getName());
                 anotaciones = campo.getAnnotations();
-
+                
                 for (Annotation anotacion : anotaciones) {
                     // System.out.println(anotacion);
                     if (anotacion instanceof FixedWidthField) {
-                        int pos = (((FixedWidthField) anotacion).position());
+                        
                         int width = (((FixedWidthField) anotacion).width());
                         if (campo.getType().equals(boolean.class)) {
                             Method get = cls.getMethod("is" + capitalize(campo.getName()));
@@ -106,19 +108,22 @@ public class AnotationReader {
             List<String> datos = new Lector(new FileReader(this.rutaArchivo)).leerArchivo();
 
             for (String dato : datos) {
-
+                
                 Object obj = cls.newInstance();
-                int posicion = 0;
+                int inicioVentana = 0, finVentana = 0;
                 for (Field campo : campos) {
                     anotaciones = campo.getAnnotations();
-                    if (anotaciones[0] instanceof FixedWidthField) {
-                        int width = (((FixedWidthField) anotaciones[0]).width()) - 1;
-                        String data = dato.substring(posicion, posicion + width);
-                        //System.out.println(posicion+" "+(posicion+width));
-                        posicion = posicion + width + 1;
-                        //System.out.println("campo "+data);
+                    
+                    if (anotaciones.length >0 && anotaciones[0] instanceof FixedWidthField) {
+                        int width = (((FixedWidthField) anotaciones[0]).width());
+                        finVentana = width + inicioVentana;
+                        String data = dato.substring(inicioVentana, finVentana);
                         Method get = cls.getMethod("set" + capitalize(campo.getName()), campo.getType());
                         get.invoke(obj, casteoObjeto(campo.getType(), data));
+                        
+                        inicioVentana = finVentana;
+                        //System.out.println("campo "+data);
+                        
                     }
                 }
                 retorna.add(obj);
@@ -126,7 +131,7 @@ public class AnotationReader {
             }
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         return retorna;
@@ -135,6 +140,7 @@ public class AnotationReader {
     private Object casteoObjeto(Class<?> type, String data) throws ParseException {
         Object temporal = null;
         ///System.out.println("data " + data);
+        //System.out.println(data);
         if (type.getCanonicalName().equalsIgnoreCase("int")) {
             temporal = Integer.parseInt(data.trim());
         } else if (type.getCanonicalName().equalsIgnoreCase("double")) {
@@ -156,7 +162,7 @@ public class AnotationReader {
 
         try {
 
-            System.out.println(retorna.get(0));
+            
             Collections.shuffle(retorna);
             for (Object lista1 : retorna) {
                 System.out.println(lista1.toString());

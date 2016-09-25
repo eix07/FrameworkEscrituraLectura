@@ -13,9 +13,9 @@ import FrameworkAnotaciones.FixedWidthField;
  */
 public class Animal {
     
-    @FixedWidthField(position=1,width=15) String nombre;
-    @FixedWidthField(position=2,width=10) double peso;
-    @FixedWidthField(position=3,width=20) String caracteristica;
+    @FixedWidthField(width=15) String nombre;
+    @FixedWidthField(width=10) double peso;
+    @FixedWidthField(width=20) String caracteristica;
     
     public Animal(){
     

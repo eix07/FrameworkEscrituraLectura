@@ -15,10 +15,10 @@ import java.util.Date;
  */
 public class Casa {
     
-    @FixedWidthField(position=1,width=26) String direccion;
-    @FixedWidthField(position=2,width=2) int pisos;
-    @FixedWidthField(position=3,width=10) double area;
-    @FixedWidthField(position=4,width=10) Date fechaCreado;
+    @FixedWidthField(width=26) String direccion;
+    @FixedWidthField(width=2) int pisos;
+    @FixedWidthField(width=10) double area;
+    @FixedWidthField(width=10) Date fechaCreado;
     
     public Casa(){
     

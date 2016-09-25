@@ -9,10 +9,11 @@ import java.lang.annotation.ElementType;
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
 import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import java.lang.annotation.Target;
 
-@Retention( RUNTIME )
+@Retention( RetentionPolicy.RUNTIME )
 @Target(FIELD)
 /**
  *
@@ -20,6 +21,5 @@ import java.lang.annotation.Target;
  */
 
 public @interface FixedWidthField {
-    int position()default 0;
-    int width()default 0;
+    int width();
 }
